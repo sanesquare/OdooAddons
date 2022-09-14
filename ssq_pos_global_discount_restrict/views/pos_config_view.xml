@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+
+        <record id="pos_config_view_form_inherit_pos_discount" model="ir.ui.view">
+            <field name="name">pos.config.form.inherit.pos.discount</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form" />
+            <field name="priority" eval="101"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='pos-loyalty']" position="before">
+                    <div class="col-12 col-lg-6 o_setting_box global_discount_restrict" title="Enable Global Discount Restriction" attrs="{'invisible': ['|', ('module_pos_discount','=', False), ('module_pos_hr', '=', False)]}">
+                        <div class="o_setting_left_pane">
+                            <field name="is_global_discount_restrict"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="is_global_discount_restrict" string="Enable Global Discount Restriction"/>
+                            <div class="text-muted">
+                                Global Discount Restriction in POS
+                            </div>
+                            <field name="global_discount_allowed_employee_ids" widget="many2many_tags" attrs="{'invisible': [('is_global_discount_restrict','=', False)]}"/>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
