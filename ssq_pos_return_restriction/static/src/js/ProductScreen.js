@@ -3,7 +3,6 @@ odoo.define('ssq_pos_return_restriction.ProductScreen', function(require) {
 
     const ProductScreen = require('point_of_sale.ProductScreen');
     const RefundButton = require('point_of_sale.RefundButton');
-    const Registries = require('point_of_sale.Registries');
 
     ProductScreen.addControlButton({
         component: RefundButton,
