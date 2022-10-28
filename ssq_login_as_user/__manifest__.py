@@ -10,7 +10,7 @@
     "license": "OPL-1",
     "category": "Uncategorized",
     "version": "14.0.1.0.1",
-    "images": ["static/description/ssq_login_as_user_v15.png"],
+    "images": ["static/description/ssq_login_as_user_v14.png"],
     "depends": ["base"],
     "data": [
         "security/security.xml",
