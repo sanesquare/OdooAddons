@@ -1,0 +1,14 @@
+<odoo>
+    <record model="ir.ui.view" id="module_form_inherit">
+        <field name="name">ir.module.module.form</field>
+        <field name="model">ir.module.module</field>
+        <field name="inherit_id" ref="base.module_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet" position="before">
+                <header>
+                    <button type="object" name="test_app" string="Popup Test" class="oe_highlight" attrs="{'invisible': [('shortdesc','!=','Popup Message')]}"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+</odoo>
