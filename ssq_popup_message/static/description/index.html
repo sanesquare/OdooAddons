@@ -1,0 +1,66 @@
+<body style="margin: o;" class="container ">
+    <section class="oe_container oe_dark ">
+        <div class="col-md-12 ">
+            <h2 class="oe_slogan" style="font-size: 35px;color:#1d7dc9"><b>Popup Message</b></h2>
+        </div>
+    </section>
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+            <div style="text-align:center;">
+                <p>
+                    <span style="color:#3e3e3e;font-size: 15px;">This module can be used to create custom popup messages.</span>
+                </p><br/>
+
+            </div>
+            <br/>
+        </div>
+    </section>
+
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img src="popup.png" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    <br/><br/>
+    <section class="oe_container oe_dark">
+        <div class="oe_row oe_spaced">
+            <h3 class="oe_slogan" style="color:#3e3e3e;font-size: 28px;">Put the below code where you want to generate a popup message.</h3>
+            <div style="padding-left: 30%;">
+                <p>view_id = self.env.ref('ssq_popup_message.popup_message_form').id</p>
+                <p>message = "Popup Message"</p>
+                <p>return {</p>
+                    <p style="padding-left:20px;">'name' : "Success",</p>
+                    <p style="padding-left:20px;">'type' : "ir.actions.act_window",</p>
+                    <p style="padding-left:20px;">'view_type' : "form",</p>
+                    <p style="padding-left:20px;">'view_mode' : "form",</p>
+                    <p style="padding-left:20px;">'res_model' : "popup.wizard",</p>
+                    <p style="padding-left:20px;">'target' : "new",</p>
+                    <p style="padding-left:20px;">'view_id' : view_id,</p>
+                    <p style="padding-left:20px;">'context' : {'default_name' : message}</p>
+                <p>}</p>
+            </div>
+        </div>
+    </section>
+
+    <br/><br/><br/><br/><br/>
+    <hr style="width: 100%;height: 4px;background: #1d7dc9;margin: 0px 0px;">
+    <hr style="width: 100%;height: 4px;background: #3e3e3e;margin: 0px 0px;">
+    <section class="oe_container oe_dark">
+        <div class="oe_row ">
+            <div class="oe_slogan text-center">
+                <img src="icon.png" height="200" width="500" class="img-fluid"/>
+                <br/>
+                <div style="color:#3e3e3e;">
+                    <h3 style="color:#1d7dc9;font-size: 25px;">Have a specific requirement in mind? Just ping us on:</h3><br>
+                    <h3 style="color:#1d7dc9;font-size: 20px;">Email: <a style="color:#3e3e3e;font-size: 20px;" href="mailto:odoo@sanesquare.com">odoo@sanesquare.com</a> <br></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr style="width: 100%;height: 4px;background: #3e3e3e;margin: 0px 0px;">
+    <hr style="width: 100%;height: 4px;background: #1d7dc9;margin: 0px 0px;">
+
+</body>

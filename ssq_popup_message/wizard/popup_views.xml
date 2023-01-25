@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="popup_message_form">
+            <field name="name">popup.wizard.form</field>
+            <field name="model">popup.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="name" nolabel="1"/>
+                    <div attrs="{'invisible':[('name','!=',False)]}">
+                        Nothing to display.
+                    </div>
+                    <footer>
+                        <button string="OK" class="btn-success" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
