@@ -11,7 +11,7 @@
     "license": "AGPL-3",
     "category": "Purchase",
     "version": "16.0.1.0.1",
-    "image": ["static/description/app_image.png"],
+    "images": ["static/description/app_image.png"],
     "depends": ["base", "purchase"],
     "data": [
         "views/purchase_views.xml",
