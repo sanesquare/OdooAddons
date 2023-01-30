@@ -7,7 +7,7 @@ class StockPicking(models.Model):
 
     def button_validate(self):
         res = super(StockPicking, self).button_validate()
-        if res == True and self.purchase_id.landed_cost_lines:
+        if res and self.purchase_id.landed_cost_lines:
             line_data = []
             for line in self.env["purchase.landed.cost.line"].search(
                 [("purchase_id", "=", self.purchase_id.id), ("is_landed_cost_created", "=", False)]
