@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+
+        <record id="view_quotation_tree_with_onboarding_inherit" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('state','in',('draft'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="quotation_number"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('state','in',('draft'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="quotation_number" readonly="1"/>
+                </xpath>
+                <xpath expr="//div[@class='oe_title']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('state','in',('draft'))]}</attribute>
+                </xpath>
+                <xpath expr="//div[@class='oe_title']" position="after">
+                    <div>
+                        <h1>
+                            <field name="quotation_number" readonly="1" attrs="{'invisible': [('state','not in',('draft'))]}"/>
+                        </h1>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
