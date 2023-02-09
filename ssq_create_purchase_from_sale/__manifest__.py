@@ -5,7 +5,7 @@
     "description": """
         Create purchase order directly from a sale order
     """,
-    "author": "Sanesquare Private Limited",
+    "author": "Sanesquare Technologies",
     "website": "https://www.sanesquare.com/",
     "support": "odoo@sanesquare.com",
     "license": "AGPL-3",

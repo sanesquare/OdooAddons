@@ -6,11 +6,11 @@
     "description": """
         Create landed costs directly from purchase order.
     """,
-    "author": "Sanesquare Private Limited",
+    "author": "Sanesquare Technologies",
     "website": "https://www.sanesquare.com/",
     "support": "odoo@sanesquare.com",
     "license": "AGPL-3",
-    "category": "Uncategorized",
+    "category": "Purchase",
     "version": "16.0.1.0.1",
     "images": ["static/description/app_image.png"],
     "depends": ["base", "stock", "purchase", "stock_landed_costs"],
