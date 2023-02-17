@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="hr_applicant_view_form_inherit">
+            <field name="name">hr.applicant.form</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='email_from']" position="before">
+                    <field name="date_application"/>
+                </xpath>
+                <xpath expr="//group[@name='recruitment_contract']" position="after">
+                    <group name="applicant_experience" string="Experience">
+                        <label for="year_experience" string="Experience"/>
+                        <div class="o_row">
+                            <field name="year_experience" nolabel="1" style="width: 10% !important;"/>
+                            <span style="padding-right:20px !important;"> Year(s) </span>
+                            <field name="month_experience" style="width: 10% !important;"/>
+                            <span> Month(s) </span>
+                        </div>
+
+                        <label for="current_year_experience" string="Current Expected Experience"/>
+                        <div class="o_row">
+                            <field name="current_year_experience" nolabel="1" style="width: 10% !important;" readonly="1"/>
+                            <span style="padding-right:20px !important;"> Year(s) </span>
+                            <field name="current_month_experience" style="width: 10% !important;" readonly="1"/>
+                            <span> Month(s) </span>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
