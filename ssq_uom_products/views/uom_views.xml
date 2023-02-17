@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="product_uom_form_view_inherit">
+            <field name="name">uom.uom.form</field>
+            <field name="model">uom.uom</field>
+            <field name="inherit_id" ref="uom.product_uom_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet//group" position="before">
+                    <div class="oe_button_box" name="button_box">
+                        <style>
+                            .o-form-buttonbox .btn.oe_stat_button{
+                                width: 200px !important;
+                            }
+                        </style>
+                        <button name="action_view_products" type="object" class="oe_stat_button" icon="fa-list-alt" attrs="{'invisible': [('product_count', '=', 0)]}">
+                            <field name="product_count" widget="statinfo" string="Products"/>
+                        </button>
+                        <button name="action_view_po_products" type="object" class="oe_stat_button" icon="fa-list-ul" attrs="{'invisible': [('po_product_count', '=', 0)]}">
+                            <field name="po_product_count" widget="statinfo" string="Purchase Products"/>
+                        </button>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
