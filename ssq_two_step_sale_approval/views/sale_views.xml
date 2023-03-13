@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="is_two_step_sale_approval" invisible="1"/>
+                <field name="approval_state" invisible="1"/>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button type="object"
+                        name="first_approve"
+                        string="Approve"
+                        class="oe_highlight"
+                        attrs="{'invisible':['|',('approval_state','not in',['waiting_approval_1']),('is_two_step_sale_approval','=',False)]}"
+                        />
+                <button type="object"
+                        name="second_approve"
+                        string="Approve"
+                        class="oe_highlight"
+                        attrs="{'invisible':['|',('approval_state','not in',['waiting_approval_2']),('is_two_step_sale_approval','=',False)]}"
+                        />
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <field name="approval_state" widget="statusbar" attrs="{'invisible':[('approval_state','=',False)]}"/>
+            </xpath>
+            <xpath expr="//header//field[@name='state']" position="attributes">
+                <attribute name="attrs">{'invisible':[('approval_state','!=',False)]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_quotation_send']" position="attributes">
+                <attribute name="attrs">{'invisible':['|',('approval_state','!=',False)]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm'][2]" position="attributes">
+                <attribute name="attrs">{'invisible':['|',('approval_state','!=',False),('state','not in',['draft'])]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
