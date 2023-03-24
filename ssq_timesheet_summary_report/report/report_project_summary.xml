@@ -1,0 +1,9 @@
+<odoo>
+    <record id="project_summary_report" model="ir.actions.report">
+        <field name="name">Project Summary Report</field>
+        <field name="model">wizard.project.summary.report</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">report_project_summary</field>
+        <field name="report_file">report_project_summary</field>
+    </record>
+</odoo>
